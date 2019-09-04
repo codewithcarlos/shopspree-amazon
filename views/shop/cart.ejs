@@ -1,0 +1,121 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/cart.css">
+<link rel="stylesheet" href="/css/media.css">
+</head>
+
+<body onresize="updateProductTitle();">
+  <%- include('../includes/navigation.ejs') %>
+  <main>
+    <div class="search">
+      <div class="a-container">
+        <div class="a-row">
+          <h2>Shopping Cart</h2>
+          <hr />
+        </div>
+        <div class="cart-container">
+          <% if (products.length > 0) { %>
+              <ul class="cart__item-list">
+                <% products.forEach((p, i) => { %>
+                <li class="cart__item">
+                  <div class="cart-item-container">
+                    <div class="cart-image">
+                      <a href="/products/<%= p.productId._id %>">
+                        <img
+                          src="/<%= p.productId.imageUrl %>"
+                          alt="<%= p.productId.title %>"
+                          width="100"
+                        />
+                      </a>
+                    </div>
+                    <div class="cart-title mb-1">
+                      <div>
+                        <a href="/products/<%= p.productId._id %>">
+                          <span class="a-size-medium a-text-bold product-title">
+                            <%= p.productId.title %>
+                          </span>
+                        </a>
+                      </div>
+                      <div>
+                        <form action="/cart-delete-item" method="POST">
+                          <input
+                            type="hidden"
+                            value="<%= p.productId._id %>"
+                            name="productId"
+                          />
+                          <input
+                            type="hidden"
+                            name="_csrf"
+                            value="<%= csrfToken %>"
+                          />
+                          <div class="a-size-small a-color-success mb-2">
+                            In Stock
+                          </div>
+                          <input class="btn danger" type="submit"  value="Delete" ></input>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cart-price-quantity">
+                    <div class="cart-price">
+                      <span>Price</span>
+                      <h2 class="a-color-price">$<%= p.productId.price %></h2>
+                    </div>
+                    <div class="sc-invisible-when-no-js">
+                      <form name="updateQtyForm" action="/cart-update" method="POST">
+                        <input
+                          type="hidden"
+                          value="<%= p.productId._id %>"
+                          name="productId"
+                        />
+                        <input
+                          type="hidden"
+                          name="_csrf"
+                          value="<%= csrfToken %>"
+                        />
+                      <div class="cart-quantity">
+                        <span>Quantity:</span>
+                        <input autocomplete="off" min="1" maxlength="3" name="quantity" value="<%= p.quantity %>" type="text">
+                      </div>
+                      <div class="a-spacing-top-small">
+                          <span class="a-button btn a-button-primary a-button-small sc-update-link a-button-span8 aok-hidden" id="a-autoid-<%=i %>">
+                            <span class="a-button-inner">
+                              <button type="submit" value="update" class="a-button-text" id="a-autoid-<%=i %>-announce">
+                                Update
+                                <span class="aok-offscreen">Why is this here</span>
+                              </a>
+                            </span>
+                          </span>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <% }) %>
+              </ul>
+          <div class="proceed-to-checkout-desktop-container">
+            <div class="a-box a-spacing-extra-large">
+              <div class="a-box-inner">
+                <div class="cart-subtotal mb-2">
+                  <span class="a-size-medium"
+                    >Subtotal (<%= cartCountTest %> items):</span
+                  >
+                  <span class="a-size-medium a-color-price a-text-bold"
+                    >$<%= totalSum.toFixed(2) %></span
+                  >
+                </div>
+                <a class="btn a-button-primary" href="/checkout"
+                  >Proceed to checkout</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <% } else { %>
+        <h1>No Products in Cart!</h1>
+        <% } %>
+      </div>
+    </div>
+  </main>
+  <%- include('../includes/end.ejs') %>
+</body>

@@ -1,0 +1,60 @@
+.form-control-a {
+  margin: 2rem 0;
+}
+
+.form-control-a input[type='file'] {
+  line-height: normal;
+  height: 3rem;
+  padding: 0.5rem 0 0 0.5rem;
+}
+
+.form-control-a input {
+  height: 31px;
+  padding: 3px 7px;
+  font: inherit;
+  width: 100%;
+  border: 1px solid #a6a6a6;
+  border-top-color: #949494;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5),
+    0 1px 0 rgba(0, 0, 0, 0.07) inset;
+  outline: 0;
+}
+
+.form-control-a textarea {
+  padding-left: 0.5rem;
+}
+
+.form-control-a label,
+.form-control-a textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.form-control-a textarea {
+  border: 1px solid #a1a1a1;
+  font: inherit;
+  border-radius: 2px;
+}
+
+.form-control-a input:focus,
+.form-control-a textarea:focus {
+  /* outline-color: #febd69; */
+  outline-color: #e77600;
+}
+
+.form-control-a input.invalid,
+.form-control-a textarea.invalid {
+  border-color: red;
+}
+
+#authportal-main-section button {
+  background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+  border-color: #a88734 #9c7e31 #846a29;
+  color: #111;
+  width: 100%;
+  display: block;
+  margin: auto;
+  margin-bottom: 25px;
+}

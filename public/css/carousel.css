@@ -1,0 +1,20 @@
+#promo .col-lg-12 {
+  padding: 0;
+}
+
+#promo {
+  transform: scale(1.05, 1.05);
+}
+
+#promo .container {
+  width: 100%;
+}
+
+#promo-carousel {
+  max-height: 230px;
+}
+
+.carousel-control.left,
+.carousel-control.right {
+  background-image: none;
+}

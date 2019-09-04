@@ -1,0 +1,68 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/auth.css">
+    <link rel="stylesheet" href="/css/media.css">
+</head>
+
+<body>
+   <%- include('../includes/navigation.ejs') %>
+
+   <main>
+        <div class="signup-a auth-workflow">
+          <div id="authportal-center-section" class="a-section">
+            <div id="authportal-main-section" class="a-section">
+              <div class="a-section auth-pagelet-container">
+                <div class="a-section">
+                  <% if (errorMessage) { %>
+                  <div class="user-message user-message--error">
+                    <%= errorMessage %>
+                  </div>
+                  <% } %>
+                  <form class="login-form" action="/login" method="POST">
+                    <div class="a-box a-spacing-extra-large">
+                      <div class="a-box-inner">
+                        <h1 class="a-spacing-small">
+                          Sign-In
+                        </h1>
+                        <div class="form-control-a">
+                          <label for="email">E-Mail</label>
+                          <input
+                            class="<%= validationErrors.find(e => e.param === 'email') ? 'invalid' : '' %>"
+                            type="email"
+                            name="email"
+                            id="email"
+                            value="<%= oldInput.email %>"
+                          />
+                        </div>
+                        <div class="form-control-a">
+                          <label for="password">Password</label>
+                          <input
+                            class="<%= validationErrors.find(e => e.param === 'password') ? 'invalid' : '' %>"
+                            type="password"
+                            name="password"
+                            id="password"
+                            value="<%= oldInput.password %>"
+                          />
+                        </div>
+                        <input
+                          type="hidden"
+                          name="_csrf"
+                          value="<%= csrfToken %>"
+                        />
+                        <button class="btn" type="submit">Login</button>
+                        <div class="signup">
+                          <span>New to ShopSpree? <a href="/signup">Create Account</a></span>
+                        </div>
+                        <div class="centered" style="margin-bottom: 15px;">
+                          <a href="/reset">Reset Password</a>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+<%- include('../includes/end.ejs') %>

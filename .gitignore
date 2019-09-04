@@ -1,0 +1,9 @@
+.vscode
+node_modules
+.prettierignore
+access.log
+configKeys.js
+nodemon.json
+package-lock.json
+package.json
+Procfile

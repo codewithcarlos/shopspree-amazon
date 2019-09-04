@@ -1,0 +1,41 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/auth.css">
+    <link rel="stylesheet" href="/css/media.css">
+</head>
+
+<body>
+   <%- include('../includes/navigation.ejs') %>
+   <main>
+        <div class="signup-a auth-workflow">
+          <div id="authportal-center-section" class="a-section">
+            <div id="authportal-main-section" class="a-section">
+              <div class="a-section auth-pagelet-container">
+                <div class="a-section">
+                  <% if (errorMessage) { %>
+                  <div class="user-message user-message--error">
+                    <%= errorMessage %>
+                  </div>
+                  <% } %>
+                  <form class="login-form" action="/reset" method="POST">
+                    <div class="a-box a-spacing-extra-large">
+                      <div class="a-box-inner">
+                        <h1 class="a-spacing-small">
+                          Reset Password
+                        </h1>
+                        <div class="form-control-a">
+                          <label for="email">E-Mail</label>
+                          <input type="email" name="email" id="email" />
+                        </div>
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                        <button class="btn" type="submit">Reset Password</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+<%- include('../includes/end.ejs') %>

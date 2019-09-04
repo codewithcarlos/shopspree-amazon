@@ -1,0 +1,108 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/forms.css">
+<link rel="stylesheet" href="/css/auth.css">
+<link rel="stylesheet" href="/css/media.css">
+</head>
+
+<body>
+  <%- include('../includes/navigation.ejs') %>
+
+  <main>
+    <div class="signup-a auth-workflow">
+      <div id="authportal-center-section" class="a-section">
+        <div id="authportal-main-section" class="a-section">
+          <div class="a-section auth-pagelet-container">
+            <div class="a-section">
+              <% if (errorMessage) { %>
+              <div class="user-message user-message--error">
+                <%= errorMessage %>
+              </div>
+              <% } %>
+              <form
+                class="login-form"
+                action="/signup"
+                method="POST"
+                novalidate
+              >
+                <div class="a-box a-spacing-extra-large">
+                  <div class="a-box-inner">
+                    <h1 class="a-spacing-small">
+                      Create account
+                    </h1>
+                    <div class="form-control-a">
+                      <label for="firstName">First Name</label>
+                      <input
+                        class="<%= validationErrors.find(e => e.param === 'firstName') ? 'invalid' : '' %>"
+                        type="name"
+                        name="firstName"
+                        id="firstName"
+                        value="<%= oldInput.firstName %>"
+                      />
+                    </div>
+                    <div class="form-control-a">
+                      <label for="lastName">Last Name</label>
+                      <input
+                        class="<%= validationErrors.find(e => e.param === 'lastName') ? 'invalid' : '' %>"
+                        type="name"
+                        name="lastName"
+                        id="lastName"
+                        value="<%= oldInput.lastName %>"
+                      />
+                    </div>
+                    <div class="form-control-a">
+                      <label for="email">E-Mail</label>
+                      <input
+                        class="<%= validationErrors.find(e => e.param === 'email') ? 'invalid' : '' %>"
+                        type="email"
+                        name="email"
+                        id="email"
+                        value="<%= oldInput.email %>"
+                      />
+                    </div>
+                    <div class="form-control-a">
+                      <label for="password">Password</label>
+                      <input
+                        class="<%= validationErrors.find(e => e.param === 'password') ? 'invalid' : '' %>"
+                        type="password"
+                        name="password"
+                        id="password"
+                        value="<%= oldInput.password %>"
+                      />
+                    </div>
+                    <div class="form-control-a">
+                      <label for="confirmPassword">Confirm Password</label>
+                      <input
+                        class="<%= validationErrors.find(e => e.param === 'confirmPassword') ? 'invalid' : '' %>"
+                        type="password"
+                        name="confirmPassword"
+                        id="confirmPassword"
+                        value="<%= oldInput.confirmPassword %>"
+                      />
+                    </div>
+                    <input
+                      type="hidden"
+                      name="_csrf"
+                      value="<%= csrfToken %>"
+                    />
+                    <button class="btn" type="submit">
+                      Create Your ShopSpree Account
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"
+  ></script>
+  <script src="/js/main.js"></script>
+</body>
+
+</html>

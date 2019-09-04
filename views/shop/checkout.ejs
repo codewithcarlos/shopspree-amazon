@@ -1,0 +1,215 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/cart.css">
+<link rel="stylesheet" href="/css/media.css">
+</head>
+
+<body>
+  <%- include('../includes/navigation.ejs') %>
+  <main>
+    <div class="checkout-container">
+      <div class="checkout-box">
+            
+        <form id="spc-form" name="spc" method="post" action="/checkout">
+          <% products.forEach((p, i) => { %>
+          <div class="a-box a-box-inner search">
+            <div class="a-row a-color-success a-size-medium">
+              <span class="a-color-success a-text-bold a-size-medium"
+                >Guaranteed delivery date:
+              </span>
+              <span>
+                <span
+                  class="a-color-success a-text-bold"
+                  data-field="promisemonth"
+                  ><%= monthNames[primeDeliveryDate.getMonth()] %></span
+                >
+                <span class="a-color-success a-text-bold" data-field="promiseday"
+                  ><%= primeDeliveryDate.getDate() %>,</span
+                >
+                <span class="a-color-success a-text-bold" data-field="promiseyear"
+                  ><%= primeDeliveryDate.getFullYear() %></span
+                >
+              </span>
+              <span class="a-size-base a-color-secondary a-text-normal countdown"></span>
+            </div>
+            <div class="a-row a-spacing-small">
+              <span class="a-size-base a-color-secondary">
+                Items shipped from Amazon.com
+              </span>
+            </div>
+            <div class="checkout-grid">
+              <div class="cart-grid-image">
+                <div class="cart-image">
+                  <img
+                    src="/<%= p.productId.imageUrl %>"
+                    alt="<%= p.productId.title %>"
+                    width="100"
+                  />
+                </div>
+              </div>
+              <div class="cart-grid-title">
+                <span class="a-text-bold">
+                  <%= p.productId.title %>
+                </span>
+              </div>
+              <div class="cart-grid-price">
+                <span class="a-size-medium a-text-bold a-color-price">
+                  $<%= p.productId.price %>
+                </span>
+              </div>
+              <div class="cart-grid-quantity a-button">
+                <span class=" a-text-bold">
+                  Qty:
+                </span>
+                <span class="a-text-bold">
+                  <%= p.quantity %>
+                </span>
+              </div>
+              <div class="cart-grid-delivery">
+                <div id="ship_option_header">
+                  Choose your Prime delivery option:
+                </div>
+                <div class="a-radio radio-standard">
+                  <label>
+                    <% if(selectedDeliveryMethods[i] === "same-us-promo") { %>
+                      <input type="radio" name="order<%=i %>" value="same-us-promo" 
+                       checked />
+                    <% } else { %>
+                      <input type="radio" name="order<%=i %>" value="same-us-promo" 
+                       />
+                    <% } %>
+                    <i
+                      class="a-icon a-icon-radio"
+                    ></i
+                    ><span class="a-label a-radio-label">
+                      <span>
+                        <span class="a-color-success a-text-bold"
+                          >Tomorrow, by 9pm</span
+                        >
+                        <span class="a-color-secondary">
+                          <br />
+                          $5.99&nbsp;-&nbsp;One-Day Shipping</span
+                        >
+                      </span>
+                    </span></label
+                  >
+                </div>
+                <div class="a-radio radio-standard">
+                  <label>
+                    <% if(selectedDeliveryMethods[i] === "two-us-prime") { %>
+                    <input type="radio" name="order<%=i %>" value="two-us-prime" checked />
+                    <% } else { %>
+                    <input type="radio" name="order<%=i %>" value="two-us-prime" selectedDeliveryMethods[i]/>
+                    <% } %>
+                    <i
+                      class="a-icon a-icon-radio"
+                    ></i
+                    ><span class="a-label a-radio-label">
+                      <span>
+                        <span class="a-color-success a-text-bold"
+                          ><%= dayNames[primeDeliveryDate.getDay()] %>, <%=monthNames[primeDeliveryDate.getMonth()]%> <%= primeDeliveryDate.getDate() %></span
+                        >
+                        <span class="a-color-secondary">
+                          <br />
+                          FREE Prime Delivery</span
+                        >
+                      </span>
+                    </span></label
+                  >
+                </div>
+                <div class="a-radio radio-standard">
+                  <label>
+                    <% if(selectedDeliveryMethods[i] === "same-us-prime") { %>
+                      <input type="radio" name="order<%=i %>" value="same-us-prime" checked />
+                    <% } else { %>
+                      <input type="radio" name="order<%=i %>" value="same-us-prime" />
+                    <% } %> 
+                    <i
+                      class="a-icon a-icon-radio"
+                    ></i
+                    ><span class="a-label a-radio-label">
+                      <span>
+                        <span class="a-color-success a-text-bold"
+                          ><%= dayNames[oneDayDelivery.getDay()] %>, <%=monthNames[oneDayDelivery.getMonth()]%> <%= oneDayDelivery.getDate() %></span
+                        >
+                        <span class="a-color-secondary">
+                          <br />
+                          FREE Amazon Day Delivery</span
+                        >
+                      </span>
+                    </span></label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+        </form>
+      </div>
+			<div class="subtotalsContainer">
+						<div class="a-box">
+							<div class="a-box-inner">
+								<div class="centered">
+										<div class="centered mb-1">
+												<form action="/create-order" method="POST">
+													<script
+														src="https://checkout.stripe.com/checkout.js"
+														class="stripe-button"
+														data-key="pk_test_k2ZHLpVA1BQG3BRMmcav0C3X00H2XitchK"
+														data-amount="<%= totalSum * 100 %>"
+														data-name="Your Order"
+														data-description=""
+														data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+														data-locale="auto"
+														data-currency="usd"
+														></script>
+													</form>
+											</div>
+											<span data-testid="" class="a-size-small a-color-secondary">
+													By placing your order, you agree to Amazon's <a class="a-link-normal" rel="noopener" href="#">privacy notice</a> and <a class="a-link-normal" rel="noopener" href="#">conditions of use</a>.
+											</span>
+								</div>
+								<hr class="mt-1">
+								<h3 class="a-size-medium a-text-bold">Order Summary</h3>
+								<div class="order-summary">
+									<div class="flex">
+										<span>Items: </span>
+										<span>$<%= total.toFixed(2) %> </span>
+									</div>
+									<div class="flex">
+										<span>Shipping &amp; Handling: </span>
+										<span>
+                        $<%= shippingCost.toFixed(2) %>
+											<hr>
+										</span>
+									</div>
+									<div class="flex">
+										<span>Total before tax: </span>
+										<span>$<%= (total + shippingCost).toFixed(2) %></span>
+									</div>
+									<div class="flex">
+										<span>Estimated tax to be collected: </span>
+										<span>$<%= salesTax.toFixed(2); %></span>
+									</div>
+									<hr>
+									<div class="flex a-color-price a-size-medium a-text-bold"">
+											<span>Order Total: </span>
+											<span>$<%= (totalSum).toFixed(2); %></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+    </div>
+  </main>
+  <%- include('../includes/end.ejs') %>
+</body>
+<script>
+var inputs = document.forms["spc-form"].elements;
+for(var i = 0; i < inputs.length; i++) {
+  if(inputs[i].type == "radio")
+    inputs[i].onclick = function() {
+    this.form.submit();
+  }
+}
+</script>

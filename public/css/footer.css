@@ -1,0 +1,298 @@
+#navFooter.navLeftFooter {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  background-color: #232f3e;
+  position: relative;
+  min-width: 1000px;
+}
+
+#navFooter {
+  margin: 30px 0 8px 0;
+  padding: 0 0 7px 0;
+  margin-top: 0;
+}
+
+#navFooter a,
+#navFooter span {
+  white-space: nowrap;
+}
+
+#navFooter a:link,
+#navFooter a:visited {
+  font-family: 'Amazon Ember', Arial, sans-serif;
+  color: #ddd;
+  text-decoration: none;
+}
+
+#navFooter.navLeftFooter .navFooterBackToTop {
+  margin-bottom: 40px;
+  background-color: #37475a;
+}
+
+#navFooter.navLeftFooter .navFooterBackToTop .navFooterBackToTopText {
+  color: #fff;
+}
+
+#navFooter .navFooterBackToTop span {
+  display: block;
+  text-align: center;
+  padding: 15px 0;
+  line-height: 19px;
+  font-size: 13px;
+}
+
+#navFooter .navAccessibility.navFooterVerticalColumn {
+  display: table;
+  margin: 0 auto;
+}
+
+#navFooter.navLeftFooter .navFooterVerticalColumn {
+  /* max-width: 1000px; */
+}
+
+#navFooter.navLeftFooter .nav-footer-line {
+  border-top: 1px solid #3a4553;
+  margin-top: 40px;
+}
+
+#navFooter .navAccessibility.navFooterVerticalRow {
+  display: table-row;
+}
+
+#navFooter .navAccessibility.navFooterLinkCol {
+  display: table-cell;
+  padding: 0 10px;
+  line-height: 120%;
+  color: #333;
+  vertical-align: top;
+}
+
+#navFooter.navLeftFooter .navFooterColHead {
+  font-weight: 700;
+  color: #fff;
+}
+
+.navFooterColHead {
+  font-size: 16px;
+  margin: 6px 0 14px 0;
+  white-space: nowrap;
+}
+
+.navFooterLinkCol ul {
+  padding: 0;
+  margin: 0;
+}
+
+#navFooter.navLeftFooter .navFooterLinkCol ul li {
+  margin: 0 0 10px;
+}
+
+.navFooterLinkCol ul li {
+  list-style-type: none;
+  white-space: nowrap;
+  margin: 0 0 8px 0;
+}
+
+ul li {
+  word-wrap: break-word;
+  margin: 0;
+  list-style: none;
+}
+
+#navFooter.navLeftFooter a.nav_a:link {
+  color: #ddd;
+}
+
+#navFooter.navLeftFooter .nav_last {
+  color: #999;
+}
+
+#navFooter .navAccessibility.navFooterColSpacerInner,
+#navFooter .navAccessibility.navFooterLinkCol {
+  display: table-cell;
+  padding: 0 10px;
+}
+
+.navFooterVerticalColumn .navFooterColSpacerInner {
+  width: 10%;
+}
+
+#navFooter.navLeftFooter a.nav_a:hover {
+  text-decoration: underline;
+}
+
+#navFooter.navLeftFooter div.navFooterLine {
+  font-size: 12px;
+  margin: 20px auto 15px auto;
+}
+
+#navFooter.navLeftFooter .navFooterPadItemLine {
+  text-align: center;
+  /* max-width: 1000px; */
+  margin: 30px auto 15px;
+}
+
+div.navFooterLine {
+  font-family: 'Amazon Ember', Arial, sans-serif;
+  color: #767676;
+  font-size: 11px;
+  text-align: center;
+  line-height: 18px;
+  white-space: nowrap;
+}
+
+#navFooter.navLeftFooter .navFooterLogoLine,
+#navFooter.navLeftFooter .navFooterPadItemLine {
+  text-align: center;
+  /* max-width: 1000px; */
+  margin: 30px auto 15px;
+}
+
+div.navFooterLogoLine {
+  margin: 30px 8px 4px 8px;
+  font-size: 1px;
+  line-height: 0;
+}
+
+#navFooter .nav-logo-base {
+  width: 100px;
+  height: 35px;
+  margin: 0 auto;
+}
+
+.navFooterLine .navFooterLogoLine {
+  padding: 15px auto;
+}
+
+.navFooterLine .navFooterLogoLine a {
+  background: transparent url(../../images/logo.png);
+  background-repeat: no-repeat;
+  background-size: 90px;
+  top: 5px;
+  position: relative;
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+#navFooter.navLeftFooter .navFooterLinkLine {
+  margin: 10px auto;
+  font-size: 12px;
+}
+
+#navFooter a,
+#navFooter span {
+  font-family: 'Amazon Ember', Arial, sans-serif;
+  white-space: nowrap;
+}
+
+.navFooterLinkLine span,
+.navFooterLinkLine ul {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.navFooterPadItemLine a,
+.navFooterPadItemLine span {
+  padding: 0 0.6em;
+}
+
+span.icp-container-desktop {
+  vertical-align: top;
+  margin-left: 70px;
+}
+
+.fas.fa-globe {
+  font-size: 15px;
+}
+
+.icp-container-desktop .icp-button {
+  display: inline-block !important;
+  border: 1px solid #848688;
+  border-radius: 3px;
+  padding: 6px 18px 6px 8px;
+  font-size: 13px;
+  margin-right: 4px;
+}
+
+.fas.fa-caret-down {
+  right: 5px;
+  top: 5px;
+  position: relative;
+}
+
+.fas.fa-caret-up {
+  left: 6.5px;
+  bottom: 5px;
+  position: relative;
+}
+
+.flag-icon-us {
+  background-image: url('https://sp-bootstrap.global.ssl.fastly.net/8.0.0/images/flags/us.svg');
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  height: 1em;
+  width: 1.33333333em;
+  margin-right: 7px;
+  background-position: 0 2px;
+}
+
+#navFooter.navLeftFooter .navFooterDescLine {
+  background-color: #131a22;
+  padding: 30px 0;
+  margin: 30px 0 0;
+}
+
+#navFooter.navLeftFooter .navFooterDescLine .navFooterMoreOnAmazon {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+#navFooter table {
+  width: 100%;
+}
+
+#navFooter .navFooterDescItem {
+  font-size: 11px !important;
+  padding: 0 0.75em;
+  vertical-align: top;
+  text-align: left;
+  line-height: 115%;
+}
+
+#navFooter.navLeftFooter .navFooterDescText,
+#navFooter.navLeftFooter .nav_last {
+  color: #999;
+}
+
+.navFooterDescText {
+  font-size: 10px;
+  color: #767676;
+  line-height: 110%;
+  display: block;
+  margin-bottom: 1px;
+}
+
+#navFooter.navLeftFooter a.nav_a:hover span {
+  text-decoration: underline;
+}
+
+.navFooterLinkLine ul li {
+  display: inline;
+}
+
+#navFooter.navLeftFooter .navFooterCopyright {
+  background-color: #131a22;
+  max-width: 100%;
+  margin: 0;
+  padding: 10px 0 30px;
+}
+
+#navFooter.navLeftFooter div#margin-tb-0.navFooterLine,
+#navFooter.navLeftFooter #margin-tb-0.navFooterCopyright {
+  margin: 0px auto;
+}

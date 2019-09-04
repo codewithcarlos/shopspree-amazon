@@ -1,0 +1,44 @@
+.order-grid {
+  display: grid;
+  grid-template-areas:
+    'cart-grid-image cart-grid-title'
+    'cart-grid-image cart-grid-soldby'
+    'cart-grid-image cart-grid-price'
+    'cart-grid-image cart-grid-quantity';
+  grid-template-columns: 125px 525px;
+  margin: 25px 0;
+}
+
+.cart-grid-soldby {
+  grid-area: cart-grid-soldby;
+  max-width: 250px;
+}
+
+.cart-grid-quantity.btn.a-button-primary {
+  margin: 0;
+  width: 93px;
+  height: 35px;
+  padding: 7px;
+}
+.order-grid .cart-grid-title {
+  max-width: 100%;
+}
+
+.order-info {
+  width: 65%;
+  float: left;
+}
+
+.buttons-order {
+  float: right;
+  width: 220px;
+}
+.buttons-order .btn {
+  width: 100%;
+  display: block;
+  margin: 10px 0;
+}
+
+.cart-grid-quantity a {
+  color: #111;
+}

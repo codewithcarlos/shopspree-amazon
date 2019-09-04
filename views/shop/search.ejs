@@ -1,0 +1,54 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/product.css">
+<link rel="stylesheet" href="/css/media.css">
+</head>
+
+<body>
+  <%- include('../includes/navigation.ejs') %>
+  <main>
+    <div class="search">
+      <div class="search-container">
+        <% if (pictures.length > 0) { %>
+        <div class="grid">
+          <% for (let product of pictures) { %>
+          <article class="card product-item">
+            <a href="<%= product.urls.regular %>">
+              <div class="card__header">
+                <h1 class="product__title">
+                  <%= product.alt_description.toUpperCase() %>
+                </h1>
+              </div>
+            </a>
+
+            <div class="card-image-container">
+              <a href="<%= product.urls.regular %>">
+                <div class=".search_card_image">
+                  <span class="helper"></span>
+                  <img
+                    src="<%= product.urls.regular %>"
+                    alt="<%= product.description %>"
+                  />
+                </div>
+              </a>
+            </div>
+            <div class="card__content">
+              <h2 class="product__price">
+                $<%= product.likes %>
+              </h2>
+              <p class="product__description">
+                <%= product.description %>
+              </p>
+            </div>
+          </article>
+          <% } %>
+        </div>
+         <% }
+        else { %>
+        <h1>No Products Found!</h1>
+        <% } %>
+      </div>
+    </div>
+  </main>
+  <%- include('../includes/end.ejs') %>
+  <script src="/js/admin.js"></script>
+</body>

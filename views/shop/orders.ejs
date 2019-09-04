@@ -1,0 +1,79 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/cart.css">
+<link rel="stylesheet" href="/css/orders.css">
+<link rel="stylesheet" href="/css/media.css">
+</head>
+
+<body>
+<%- include('../includes/navigation.ejs') %>
+<main>
+  <% if (orders.length <= 0) { %>
+    <h1>Nothing there!</h1>
+  <% } else { %>
+
+  <div class="orders-container">
+    <div class="checkout-box">
+      <div class="a-box-inner search">
+      <% orders.forEach(order => { %>
+        <div class="flex">
+          <div class="a-box mb-2 pxy-2">
+            <div class="a-row a-color-success a-size-medium">
+              <span class="a-color-success a-text-bold a-size-medium"
+              >Delivered Apr 26, 2019
+              </span>
+            </div>
+            <div class="order-info">
+              <% order.products.forEach(p => { %>
+                <div class="order-grid">     
+                    <div class="cart-grid-image">
+                      <div class="cart-image">
+                        <a href="/products/<%= p.product._id %>">
+                          <img
+                            src="/<%= p.product.imageUrl  %>"
+                            alt="<%= p.product.description %>"
+                            width="100"
+                          />
+                        </a>
+                      </div>
+                    </div>        
+                    <div class="cart-grid-title cart-item-container">
+                      <a href="/products/<%= p.product._id %>">
+                        <span>
+                          <%= p.product.title %>
+                        </span>
+                      </a>
+                    </div>
+                    <div class="cart-grid-soldby a-row a-spacing-small">
+                      <span class="a-size-base a-color-secondary">
+                        Sold by: Amazon.com
+                      </span>
+                    </div>
+                    <div class="cart-grid-price">
+                      <span class="a-size-small a-color-price">
+                        $<%= p.product.price %>
+                      </span>
+                    </div>
+                    <div class="cart-grid-quantity btn a-button-primary">
+                      <a href="/products/<%= p.product._id %>">
+                        <span>
+                          Buy it again
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+              <% }); %>
+            </div>
+            <div class="buttons-order">
+              <div class="btn">Order details</div>
+              <div class="btn">Write a product review</div>
+              <div class="btn">Archive order</div>
+            </div>
+          </div>
+        </div>
+      <% }); %>
+  <% } %>
+      </div>
+    </div>
+  </div>
+</main>
+<%- include('../includes/end.ejs') %>

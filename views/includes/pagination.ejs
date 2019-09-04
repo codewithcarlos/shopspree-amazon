@@ -1,0 +1,34 @@
+<section class="pagination">
+  <% if (currentPage !== 1) { %>
+  <a href="?page=<%= currentPage === 1 ? '' : previousPage %>">
+    ← &nbsp Prev
+  </a>
+  <% } %> <% if (currentPage === 1) { %>
+  <span class="a-disabled">
+    ← <span class="a-letter-space"></span> Previous</span
+  >
+  <% } %>
+  <a href="?page=1" class="<%= currentPage === 1 ? 'active' : '' %>">1</a>
+  <% if (currentPage !== 1 && currentPage > 3) { %>
+  <span>...</span>
+  <% } %> <% if (hasPreviousPage && currentPage > 2) { %>
+  <a href="?page=<%= previousPage %>"><%= previousPage %></a>
+  <% } %> <% if (currentPage !== 1) { %>
+  <a href="?page=<%= currentPage %>" class="active"><%= currentPage %></a>
+  <% } %> <% if (hasNextPage) { %>
+  <a href="?page=<%= nextPage %>"><%= nextPage %></a>
+  <% } %> <% if (lastPage !== currentPage && nextPage !== lastPage && nextPage+1
+  !== lastPage) { %>
+  <span>...</span>
+  <% } %> <% if (lastPage !== currentPage && nextPage !== lastPage) { %>
+  <a href="?page=<%= lastPage %>"><%= lastPage %></a>
+  <% } %> <% if (lastPage !== currentPage) { %>
+  <a href="?page=<%=nextPage %>">Next &nbsp →</a>
+  <% } %> <% if (lastPage === currentPage) { %>
+  <span class="a-disabled">
+    Next
+    <span class="a-letter-space"></span>
+    →
+  </span>
+  <% } %>
+</section>

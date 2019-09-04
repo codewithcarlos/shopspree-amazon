@@ -1,0 +1,32 @@
+.signup {
+  margin-bottom: 15px;
+}
+.signup a {
+  font-weight: 700;
+  font-size: 14px;
+}
+.signup-a {
+  padding: 14px 18px;
+  margin-bottom: 22px;
+}
+
+#authportal-center-section {
+  width: 700px;
+  margin: auto;
+}
+
+#authportal-main-section {
+  margin-top: 10px;
+}
+
+.auth-workflow .auth-pagelet-container {
+  width: 350px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.2;
+  margin: 10px 0;
+}

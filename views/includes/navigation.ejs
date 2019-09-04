@@ -1,0 +1,424 @@
+<div class="backdrop"></div>
+<header class="main-header">
+  <div id="navbar">
+    <div id="nav-belt">
+      <div class="nav-left">
+        <a href="https://github.com/codewithcarlos/Amazon-ShopSpree" target="/">
+          <button id="side-menu-toggle">Github</button>
+        </a>
+        <div id="nav-logo">
+          <a class="nav-logo-link"></a>
+          <a href="/" class="nav-logo-tagline">ShopSpree</a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <div class="nav-swmslot">
+          <div class="navSwmHoliday">
+            <a
+              aria-label="Get 5% Back at Amazon.com with the Amazon Prime Rewards Card"
+              href="/"
+              class="nav-imageHref"
+              tabindex="21"
+            >
+              <img src="../../images/save5percent.jpg" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-fill">
+        <div id="nav-search">
+          <form action="/search" method="POST">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+            <div class="nav-left">
+              <div id="nav-search-dropdown-card">
+                <div class="nav-search-scope">
+                  <div class="nav-search-facade" data-value="search-alias=aps">
+                    <span class="nav-search-label" style="width: auto;"
+                      >All</span
+                    >
+                    <i class="nav-icon"></i>
+                  </div>
+                  <span id="searchDropdownDescription" style="display:none"
+                    >Select the department you want to search in</span
+                  >
+                  <select class="nav-search-dropdown">
+                    <option selected="selected" value="aps"
+                      >All Departments</option
+                    >
+                    <option value="search-alias=audible"
+                      >Audible Books &amp; Originals</option
+                    >
+                    <option value="search-alias=alexa-skills"
+                      >Alexa Skills</option
+                    >
+                    <option value="search-alias=amazon-devices"
+                      >Amazon Devices</option
+                    >
+                    <option value="search-alias=amazonfresh"
+                      >Amazon Fresh</option
+                    >
+                    <option value="search-alias=warehouse-deals"
+                      >Amazon Warehouse</option
+                    >
+                    <option value="search-alias=appliances">Appliances</option>
+                    <option value="search-alias=mobile-apps"
+                      >Apps &amp; Games</option
+                    >
+                    <option value="search-alias=arts-crafts"
+                      >Arts, Crafts &amp; Sewing</option
+                    >
+                    <option value="search-alias=automotive"
+                      >Automotive Parts &amp; Accessories</option
+                    >
+                    <option value="search-alias=baby-products">Baby</option>
+                    <option value="search-alias=beauty"
+                      >Beauty &amp; Personal Care</option
+                    >
+                    <option value="search-alias=stripbooks">Books</option>
+                    <option value="search-alias=popular"
+                      >CDs &amp; Vinyl</option
+                    >
+                    <option value="search-alias=mobile"
+                      >Cell Phones &amp; Accessories</option
+                    >
+                    <option value="search-alias=fashion"
+                      >Clothing, Shoes &amp; Jewelry</option
+                    >
+                    <option value="search-alias=fashion-womens"
+                      >&nbsp;&nbsp;&nbsp;Women</option
+                    >
+                    <option value="search-alias=fashion-mens"
+                      >&nbsp;&nbsp;&nbsp;Men</option
+                    >
+                    <option value="search-alias=fashion-girls"
+                      >&nbsp;&nbsp;&nbsp;Girls</option
+                    >
+                    <option value="search-alias=fashion-boys"
+                      >&nbsp;&nbsp;&nbsp;Boys</option
+                    >
+                    <option value="search-alias=fashion-baby"
+                      >&nbsp;&nbsp;&nbsp;Baby</option
+                    >
+                    <option value="search-alias=collectibles"
+                      >Collectibles &amp; Fine Art</option
+                    >
+                    <option value="search-alias=computers">Computers</option>
+                    <option value="search-alias=courses">Courses</option>
+                    <option value="search-alias=financial"
+                      >Credit and Payment Cards</option
+                    >
+                    <option value="search-alias=digital-music"
+                      >Digital Music</option
+                    >
+                    <option value="search-alias=electronics"
+                      >Electronics</option
+                    >
+                    <option value="search-alias=lawngarden"
+                      >Garden &amp; Outdoor</option
+                    >
+                    <option value="search-alias=gift-cards">Gift Cards</option>
+                    <option value="search-alias=grocery"
+                      >Grocery &amp; Gourmet Food</option
+                    >
+                    <option value="search-alias=handmade">Handmade</option>
+                    <option value="search-alias=hpc"
+                      >Health, Household &amp; Baby Care</option
+                    >
+                    <option value="search-alias=local-services"
+                      >Home &amp; Business Services</option
+                    >
+                    <option value="search-alias=garden"
+                      >Home &amp; Kitchen</option
+                    >
+                    <option value="search-alias=industrial"
+                      >Industrial &amp; Scientific</option
+                    >
+                    <option value="search-alias=prime-exclusive"
+                      >Just for Prime</option
+                    >
+                    <option value="search-alias=digital-text"
+                      >Kindle Store</option
+                    >
+                    <option value="search-alias=fashion-luggage"
+                      >Luggage &amp; Travel Gear</option
+                    >
+                    <option value="search-alias=luxury-beauty"
+                      >Luxury Beauty</option
+                    >
+                    <option value="search-alias=magazines"
+                      >Magazine Subscriptions</option
+                    >
+                    <option value="search-alias=movies-tv"
+                      >Movies &amp; TV</option
+                    >
+                    <option value="search-alias=mi">Musical Instruments</option>
+                    <option value="search-alias=office-products"
+                      >Office Products</option
+                    >
+                    <option value="search-alias=pets">Pet Supplies</option>
+                    <option value="search-alias=pantry">Prime Pantry</option>
+                    <option value="search-alias=instant-video"
+                      >Prime Video</option
+                    >
+                    <option value="search-alias=software">Software</option>
+                    <option value="search-alias=sporting"
+                      >Sports &amp; Outdoors</option
+                    >
+                    <option value="search-alias=tools"
+                      >Tools &amp; Home Improvement</option
+                    >
+                    <option value="search-alias=toys-and-games"
+                      >Toys &amp; Games</option
+                    >
+                    <option value="search-alias=vehicles">Vehicles</option>
+                    <option value="search-alias=videogames">Video Games</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="nav-right">
+              <div class="nav-search-submit nav-sprite">
+                <span
+                  id="nav-search-submit-text"
+                  class="nav-search-submit-text nav-sprite"
+                >
+                  Go
+                </span>
+                <input
+                  type="submit"
+                  class="nav-input"
+                  value="Go"
+                  tabindex="20"
+                />
+              </div>
+            </div>
+            <div class="nav-fill">
+              <div class="nav-search-field">
+                <label
+                  id="nav-search-label"
+                  for="twotabsearchtextbox"
+                  class="aok-offscreen"
+                >
+                  Search
+                </label>
+                <input
+                  class="nav-input-text nav-input"
+                  type="text"
+                  autocomplete="off"
+                  name="search"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div id="nav-main">
+      <div class="nav-left">
+        <div class="nav-main-list">
+          <a
+            class="<%= path === '/products' ? 'active' : '' %>"
+            href="/products"
+            >Products</a
+          >
+          <% if (isAuthenticated) { %>
+          <a
+            class="<%= path === '/admin/add-product' ? 'active' : '' %>"
+            href="/admin/add-product"
+            >Add Product
+          </a>
+          <a
+            class="<%= path === '/admin/products' ? 'active' : '' %>"
+            href="/admin/products"
+            >Your Products
+          </a>
+          <% } %>
+        </div>
+      </div>
+
+      <div class="nav-right">
+        <div id="nav-tools">
+          <% if (!isAuthenticated) { %>
+          <a class="<%= path === '/login' ? 'active' : '' %>" href="/login"
+            >Login</a
+          >
+          <a class="<%= path === '/signup' ? 'active' : '' %>" href="/signup"
+            >Signup</a
+          >
+          <% } else { %>
+          <a id="hello" class="nav-a" href="#">
+            <span> Hello, <%= userName %></span>
+            Accounts &amp; Lists
+            <i class="fa fa-caret-down" aria-hidden="true"></i>
+          </a>
+          <form id="logoutForm" action="/logout" method="post">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+            <a onclick="document.getElementById('logoutForm').submit();"
+              >Logout</a
+            >
+          </form>
+          <a class="<%= path === '/orders' ? 'active' : '' %>" href="/orders"
+            >Orders</a
+          >
+          <a
+            id="nav-cart"
+            class="nav-a <%= path === '/cart' ? 'active' : '' %>"
+            href="/cart"
+          >
+            <% if (cartCountTest === undefined) { %>
+            <span style="right: 12px">&nbsp&nbsp</span>
+            <% } else if (cartCountTest < 10) { %>
+            <span style="right: 12px"><%= cartCountTest %></span>
+            <% } else { %>
+            <span><%= cartCountTest %></span>
+            <% } %> Cart
+          </a>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- enter mobile nav header -->
+  <div id="navbar-mobile">
+    <div id="nav-logobar">
+      <div class="nav-left">
+        <a id="nav-hamburger-menu" role="button" aria-label="Open Menu">
+          <i class="nav-icon-a11y nav-sprite"></i>
+        </a>
+        <a class="nav-mobile-logo" href="#"> </a>
+        <a href="/" class="nav-logo-tagline">ShopSpree</a>
+      </div>
+      <div class="nav-right">
+        <% if (isAuthenticated) { %>
+        <span id="nav-logobar-greeting">Hello, <b><%= userName %></b></span>
+        <% } else { %>
+        <span id="nav-logobar-login"
+          ><a href="/login" class="nav-a">Sign In</a></span
+        >
+        <% } %>
+        <a href="/cart" aria-label="Cart" class="nav-a" id="nav-button-cart">
+          <div class="nav-cart-1">
+            <i class="nav-icon nav-sprite"></i>
+            <% if (cartCountTest === undefined) { %>
+            <span class="nav-cart-count">0</span>
+            <% } else { %>
+            <span class="nav-cart-count"><%= cartCountTest %></span>
+            <% } %>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="nav-searchbar-wrapper">
+      <form
+        class="nav-searchbar"
+        action="/search"
+        method="post"
+        role="search"
+        id="nav-search-form"
+        accept-charset="utf-8"
+      >
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+        <div class="nav-fill">
+          <div class="nav-search-field">
+            <input
+              type="text"
+              class="nav-input"
+              placeholder="Search"
+              aria-label="Type search keywords"
+              data-aria-clear-label="Clear search keywords"
+              name="search"
+              autocomplete="off"
+              autocorrect="off"
+              autocapitalize="off"
+              dir="auto"
+              value=""
+              id="nav-search-keywords"
+            />
+            <a
+              class="nav-icon nav-sprite nav-search-clear"
+              tabindex="0"
+              href="javascript:;"
+              aria-label="Clear search keywords"
+            ></a>
+          </div>
+        </div>
+        <div class="nav-right">
+          <div class="nav-search-submit">
+            <input type="submit" class="nav-input" value="Go" aria-label="Go" />
+            <i class="nav-icon nav-sprite"></i>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div id="nav-gwbar">
+      <a href="/products" class="nav-a">Products</a>
+      <% if (isAuthenticated) { %>
+      <a href="/admin/add-product" class="nav-a">Add Product</a>
+      <a href="/orders" class="nav-a">Orders</a>
+      <a href="/admin/products" class="nav-a">Your Products</a>
+      <form id="logoutForm" class="nav-a" action="/logout" method="post">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+        <a onclick="document.getElementById('logoutForm').submit();">Logout</a>
+      </form>
+      <% } else { %>
+      <a href="/signup" class="nav-a">Sign Up</a>
+      <% } %>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-nav">
+  <ul class="mobile-nav__item-list">
+    <li class="mobile-nav__item">
+      <a class="<%= path === '/' ? 'active' : '' %>" href="/">Home</a>
+    </li>
+    <li class="mobile-nav__item">
+      <a class="<%= path === '/products' ? 'active' : '' %>" href="/products"
+        >Products</a
+      >
+    </li>
+    <% if (isAuthenticated) { %>
+    <li class="mobile-nav__item">
+      <a class="<%= path === '/cart' ? 'active' : '' %>" href="/cart">Cart</a>
+    </li>
+    <li class="mobile-nav__item">
+      <a class="<%= path === '/orders' ? 'active' : '' %>" href="/orders"
+        >Orders</a
+      >
+    </li>
+    <li class="mobile-nav__item">
+      <a
+        class="<%= path === '/admin/add-product' ? 'active' : '' %>"
+        href="/admin/add-product"
+        >Add Product
+      </a>
+    </li>
+    <li class="mobile-nav__item">
+      <a
+        class="<%= path === '/admin/products' ? 'active' : '' %>"
+        href="/admin/products"
+        >Your Products
+      </a>
+    </li>
+    <% } %> <% if (!isAuthenticated) { %>
+    <li class="mobile-nav__item">
+      <a class="<%= path === '/login' ? 'active' : '' %>" href="/login"
+        >Login</a
+      >
+    </li>
+    <li class="mobile-nav__item">
+      <a class="<%= path === '/signup' ? 'active' : '' %>" href="/signup"
+        >Signup</a
+      >
+    </li>
+    <% } else { %>
+    <li class="mobile-nav__item">
+      <form action="/logout" method="post">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+        <button type="submit">Logout</button>
+      </form>
+    </li>
+    <% } %>
+  </ul>
+</nav>

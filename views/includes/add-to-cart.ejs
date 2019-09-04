@@ -1,0 +1,55 @@
+<script language="JavaScript">
+  function onSubmitForm() {
+    if (document.pressed == 'add') {
+      document.cartForm.action = '/cart';
+    } else if (document.pressed == 'buy') {
+      document.cartForm.action = '/getOneClickCheckout';
+    }
+    return true;
+  }
+</script>
+<form name="cartForm" onSubmit="return onSubmitForm();" method="post">
+  <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+
+  <div class="a-column a-span12 a-text-left">
+    <span class="a-dropdown-container">
+      <label for="quantity" class="a-text-normal mb-2">Qty:</label>
+      <select
+        name="quantity"
+        autocomplete="off"
+        id="quantity"
+        tabindex="-1"
+        class="a-native-dropdown"
+      >
+        <option value="1" selected="">1 </option>
+        <option value="2">2 </option>
+        <option value="3">3 </option>
+        <option value="4">4 </option>
+        <option value="5">5 </option>
+        <option value="6">6 </option>
+        <option value="7">7 </option>
+        <option value="8">8 </option>
+        <option value="9">9 </option>
+        <option value="10">10 </option>
+      </select>
+    </span>
+  </div>
+
+  <button
+    class="btn a-button-primary"
+    type="submit"
+    onClick="document.pressed=this.value"
+    value="add"
+  >
+    Add to Cart
+  </button>
+  <button
+    class="btn a-button-oneclick"
+    type="submit"
+    onClick="document.pressed=this.value"
+    value="buy"
+  >
+    Buy Now
+  </button>
+  <input type="hidden" name="productId" value="<%= product._id %>" />
+</form>
